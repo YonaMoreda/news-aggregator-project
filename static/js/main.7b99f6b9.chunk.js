@@ -1,2 +1,0 @@
-(this["webpackJsonpnews-aggregator-project"]=this["webpackJsonpnews-aggregator-project"]||[]).push([[0],{10:function(e,t,r){},11:function(e,t,r){"use strict";r.r(t);var c=r(0),n=r(1),a=r.n(n),s=r(3),o=r.n(s);r(9),r.p,r(10);var p=function(){return Object(c.jsx)("div",{className:"App",children:Object(c.jsx)("header",{className:"App-header",children:"Start of project"})})};o.a.render(Object(c.jsx)(a.a.StrictMode,{children:Object(c.jsx)(p,{})}),document.getElementById("root"))},9:function(e,t,r){}},[[11,1,2]]]);
-//# sourceMappingURL=main.7b99f6b9.chunk.js.map

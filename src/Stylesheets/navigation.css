@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#nav {
+
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(34, 72, 116);
+    height: 3rem;
+}
+
+li {
+    text-decoration: none;
+    color: rgb(209, 209, 209);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* #nav a:hover {
+    background: #5d82cf;
+    text-decoration: none;
+}
+
+#nav ul {
+    list-style: NONE;
+    color: #EEE;
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    background-color: #222;
+    z-index: 55;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #333;
+}
+
+#nav ul li {
+    float: LEFT;
+    width: 8.97%;
+    padding: 0;
+    border: 1px SOLID #222;
+    background-color: #222;
+    text-align: CENTER;
+    font-size: 95%;
+
+}
+
+li {
+    text-decoration: none;
+    font-family: "Century Gothic",
+        CenturyGothic, AppleGothic, sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: url(http://www.clearskyy.net/crumpocolypse/upload/dark_wall.png);
+} */

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../Stylesheets/news.css";
 function News() {
   useEffect(() => {
     fetchNews();
@@ -14,9 +15,11 @@ function News() {
     <>
       {items.map((data) => {
         return (
-          <h5 key={data.id}>
-            <Link to={`/news/${data.id}`}>{data.title}</Link>
-          </h5>
+          <div className="card box">
+            <p key={data.id}>
+              <Link to={`/news/${data.id}`}>{data.title}</Link>
+            </p>
+          </div>
         );
       })}
     </>

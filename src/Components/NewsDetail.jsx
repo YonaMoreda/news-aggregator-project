@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import "../Stylesheets/newsDetail.css";
 function NewsDetail({ match }) {
   useEffect(() => {
     fetchDetail();
@@ -16,7 +16,7 @@ function NewsDetail({ match }) {
   return (
     <>
       <h1>{item.title}</h1>
-      <h1>{item.body}</h1>
+      <p>{item.body}</p>
     </>
   );
 }

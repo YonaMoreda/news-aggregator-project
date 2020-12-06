@@ -27,7 +27,9 @@ section {
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
+a{
+    text-decoration: none;
+}
 .cards {
     width: 380px;
     max-width: 700px;
@@ -38,8 +40,11 @@ section {
     margin: 20px;
     border-radius: 5px 5px 0px 0px;
     box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.25);
+    transition: ease-in all 0.3s;
 }
-
+.cards:hover{
+    transform: scale(1.05,1.05);
+}
 .cards img {
     width: 100%;
     border-radius: 5px 5px 0px 0px;
@@ -50,9 +55,11 @@ section {
     color: #272727;
     font-size: 22px;
     margin: 7px;
+    text-align: center;
 }
 
 .cards p {
     color: #343434;
     font-size: 16px;
+    padding: 20px;
 }

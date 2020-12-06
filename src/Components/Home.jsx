@@ -57,18 +57,16 @@ class Home extends React.Component {
               if (i >= 2) {
                 return (
                   <>
-                    <div class="cards">
-                      <img
-                        src="https://i.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
-                        alt=""
-                      />
-                      <h1>{title}</h1>
-                      <p>{descriptions[i]}</p>
-                      <a href={links[i]} target="_blank">
-                        read more
-                        {/* eslint-disable-next-line react/jsx-no-target-blank */}
-                      </a>
-                    </div>
+                    <a href={links[i]} target="_blank" rel="noreferrer">
+                      <div class="cards">
+                        <img
+                          src="https://i.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                          alt=""
+                        />
+                        <h1>{title}</h1>
+                        <p>{descriptions[i]}</p>
+                      </div>
+                    </a>
                   </>
                 );
               } else {

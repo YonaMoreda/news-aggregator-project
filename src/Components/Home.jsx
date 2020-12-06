@@ -47,46 +47,48 @@ class Home extends React.Component {
 
     }
 
-    render() {
-        const {error, isLoaded, titles, descriptions, links} = this.state;
-        if (error) {
-            return <div>Error: {error.message}</div>;
-        } else if (!isLoaded) {
-            return <div>Loading...</div>;
-        } else {
-            return (
-                <>
-                    <nav className="nav">
-                        <h2>logo</h2>
-                    </nav>
-                    <section>
-                        {titles.map((title, i, image) => {
-                            if (i >= 2) {
-                                return (
-                                    <>
-                                        <div className="cards">
-                                            <img
-                                                src="https://i.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
-                                                alt=""
-                                            />
-                                            <h1>{title}</h1>
-                                            <p>{descriptions[i]}</p>
-                                            {/* eslint-disable-next-line react/jsx-no-target-blank */}
-                                            <a href={links[i]} target="_blank">
-                                                read more
-                                            </a>
-                                        </div>
-                                    </>
-                                );
-                            } else {
-                                return console.log("hi");
-                            }
-                        })}
-                    </section>
-                </>
-            );
-        }
+  render() {
+    const { error, isLoaded, titles, descriptions, links } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <>
+          <nav className="nav">
+            <h2>logo</h2>
+            <h2>explore</h2>
+            <h2>Must read</h2>
+            <h2>Topics</h2>
+          </nav>
+          <section>
+            {titles.map((title, i, image) => {
+              if (i >= 2) {
+                return (
+                  <>
+                    <a href={links[i]} target="_blank" rel="noreferrer">
+                      <div className="cards">
+                        <img
+                          src="https://us.123rf.com/450wm/alhovik/alhovik1709/alhovik170900031/86481591-stock-vector-breaking-news-background-world-global-tv-news-banner-design.jpg?ver=6"
+                          alt=""
+                        />
+                        <h1>{title}</h1>
+                        <p>{descriptions[i]}</p>
+                        {/* substr(1, 4) */}
+                      </div>
+                    </a>
+                  </>
+                );
+              } else {
+                return null;
+              }
+            })}
+          </section>
+        </>
+      );
     }
+  }
 }
 
 export default Home;

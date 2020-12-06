@@ -6,8 +6,12 @@
 }
 
 .nav {
-    background-color: #d7d7d7;
+    background-color:#fff;
     color: #828282;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .nav h2 {
@@ -20,26 +24,31 @@
 }
 
 section {
-    background-color: #cdcdcd;
+    background-color: #f2f2f2;
     height: 100%;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
+a{
+    text-decoration: none;
+}
 .cards {
     width: 380px;
     max-width: 700px;
     min-width: 300px;
-    background-color: #dcdcdc;
+    background-color: #fff;
     height: 500px;
     overflow: auto;
     margin: 20px;
     border-radius: 5px 5px 0px 0px;
-    box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.2);
+    transition: ease-in all 0.3s;
 }
-
+.cards:hover{
+    transform: scale(1.05,1.05);
+}
 .cards img {
     width: 100%;
     border-radius: 5px 5px 0px 0px;
@@ -47,12 +56,14 @@ section {
 }
 
 .cards h1 {
-    color: #272727;
+    color: #0f0f0f;
     font-size: 22px;
     margin: 7px;
+    text-align: center;
 }
 
 .cards p {
-    color: #343434;
+    color: #505050;
     font-size: 16px;
+    padding: 20px;
 }

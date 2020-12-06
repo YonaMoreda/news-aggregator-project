@@ -63,7 +63,7 @@ class Home extends React.Component {
                     <a href={links[i]} target="_blank" rel="noreferrer">
                       <div className="cards">
                         <img
-                          src="https://i.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                          src="https://us.123rf.com/450wm/alhovik/alhovik1709/alhovik170900031/86481591-stock-vector-breaking-news-background-world-global-tv-news-banner-design.jpg?ver=6"
                           alt=""
                         />
                         <h1>{title}</h1>

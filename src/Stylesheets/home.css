@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 .nav {
@@ -24,27 +23,31 @@
 }
 
 section {
+ 
+   padding:0 3%;
     background-color: #f2f2f2;
     height: 100%;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 a{
     text-decoration: none;
 }
-.cards {
+.cards { 
+    
+    margin:15% 2% 0 2%;
+   
     width: 380px;
     max-width: 700px;
     min-width: 300px;
     background-color: #fff;
     height: 500px;
     overflow: auto;
-    margin: 20px;
     border-radius: 5px 5px 0px 0px;
     box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.2);
-    transition: ease-in all 0.3s;
+    transition: ease-in all 0.258s;
 }
 .cards:hover{
     transform: scale(1.05,1.05);

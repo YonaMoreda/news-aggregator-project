@@ -2,50 +2,51 @@ import React from "react";
 import "../Stylesheets/home.css";
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLoaded: false,
-            error: null,
-            titles: [],
-            descriptions: [],
-            links: [],
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoaded: false,
+      error: null,
+      titles: [],
+      descriptions: [],
+      links: [],
+    };
+  }
 
-    componentDidMount() {
-        let rss_links = ["https://rss.dw.com/xml/rss-amh-news"/*, "https://amharic.voanews.com/api/epiqq",
+  componentDidMount() {
+    let rss_links = [
+      "https://rss.dw.com/xml/rss-amh-news" /*, "https://amharic.voanews.com/api/epiqq",
             /*"https://www.addisadmassnews.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=1&Itemid=180&format=feed",
-            "http://feeds.bbci.co.uk/news/world/africa/rss.xml"*/]
-        rss_links.forEach(rss_link => {
-            fetch(rss_link)
-                .then((response) => response.text())
-                .then(
-                    (str) => new window.DOMParser().parseFromString(str, "text/xml"),
-                    (error) => {
-                        this.setState({
-                            isLoaded: true,
-                            error: error,
-                        });
-                    }
-                )
-                .then((data) => {
-                    console.log("DATA:" + data);
-                    ["title", "description", "link"].forEach((attrib) => {
-                        let items = data.getElementsByTagName(attrib);
-                        let item_values = [];
-                        for (let i = 0; i < items.length; i++) {
-                            item_values.push(items[i].childNodes[0].nodeValue);
-                        }
-                        this.setState({
-                            [attrib + "s"]: item_values,
-                            isLoaded: true,
-                        });
-                    });
-                });
-        })
-
-    }
+            "http://feeds.bbci.co.uk/news/world/africa/rss.xml"*/,
+    ];
+    rss_links.forEach((rss_link) => {
+      fetch(rss_link)
+        .then((response) => response.text())
+        .then(
+          (str) => new window.DOMParser().parseFromString(str, "text/xml"),
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error: error,
+            });
+          }
+        )
+        .then((data) => {
+          console.log("DATA:" + data);
+          ["title", "description", "link"].forEach((attrib) => {
+            let items = data.getElementsByTagName(attrib);
+            let item_values = [];
+            for (let i = 0; i < items.length; i++) {
+              item_values.push(items[i].childNodes[0].nodeValue);
+            }
+            this.setState({
+              [attrib + "s"]: item_values,
+              isLoaded: true,
+            });
+          });
+        });
+    });
+  }
 
   render() {
     const { error, isLoaded, titles, descriptions, links } = this.state;

@@ -49,8 +49,11 @@ class Home extends React.Component {
     } else {
       return (
         <>
-          <nav class="nav">
+          <nav className="nav">
             <h2>logo</h2>
+            <h2>explore</h2>
+            <h2>Must read</h2>
+            <h2>Topics</h2>
           </nav>
           <section>
             {titles.map((title, i, image) => {
@@ -58,19 +61,20 @@ class Home extends React.Component {
                 return (
                   <>
                     <a href={links[i]} target="_blank" rel="noreferrer">
-                      <div class="cards">
+                      <div className="cards">
                         <img
                           src="https://i.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
                           alt=""
                         />
                         <h1>{title}</h1>
                         <p>{descriptions[i]}</p>
+                        {/* substr(1, 4) */}
                       </div>
                     </a>
                   </>
                 );
               } else {
-                return console.log("hi");
+                return null;
               }
             })}
           </section>

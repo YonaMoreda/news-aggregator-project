@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../Stylesheets/home.css";
 const url =
-  "  https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.dw.com%2Fxml%2Frss-amh-news";
+  " https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Famharic.voanews.com%2Fapi%2Fepiqq";
+const url2 = "";
+const url3 = "";
+const url4 = "";
+const url5 = "";
 function Home() {
   const [news, setNews] = useState([]);
   const getNews = async () => {
@@ -28,18 +32,15 @@ function Home() {
       <section>
         {da &&
           da.map((item) => {
-            const { title, description, link } = item;
+            const { title, description, link, enclosure } = item;
             if (description) {
               return (
                 <>
                   <a href={link} target="_blank" rel="noopener noreferrer">
                     <div className="cards">
-                      <img
-                        src="https://us.123rf.com/450wm/alhovik/alhovik1709/alhovik170900031/86481591-stock-vector-breaking-news-background-world-global-tv-news-banner-design.jpg?ver=6"
-                        alt=""
-                      />
+                      <img src={`${enclosure.link}`} alt="" />
                       <h1>{title}</h1>
-                      <p>{description}</p>
+                      <p>{description.substring(0, 200)}</p>
                     </div>
                   </a>
                 </>

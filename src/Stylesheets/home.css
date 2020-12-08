@@ -5,7 +5,11 @@
 }
 
 .nav {
-    background-color:#fff;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: linear-gradient(#cdcdcd, #f2f2f2);
+    /*background: linear-gradient(#ffff, #f2f2f2);*/
+    /*background-color: #fff;*/
     color: #828282;
     height: 50px;
     display: flex;
@@ -22,9 +26,27 @@
     font-weight: 200;
 }
 
+header {
+    padding: 4% 1% 2%;
+    font-weight: 900;
+    background-color: #f2f2f2;
+    text-align: center;
+    font-size: 100px;
+    text-shadow: 3px 3px darkgrey;
+}
+
+footer{
+    padding: 1% 1% 1%;
+    background-color: #ffffff;
+    text-align: center;
+    color: #a5a5a5;
+    font-size: 16px;
+}
+
 section {
- 
-   padding:0 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
     background-color: #f2f2f2;
     height: 100%;
     display: flex;
@@ -32,39 +54,38 @@ section {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.cards { 
-    
-    margin:15% 2% 0 2%;
+
+.card {
+    margin: 10% 1% 0 1%;
     width: 380px;
     max-width: 700px;
     min-width: 300px;
     background-color: #fff;
-    height: 500px;
+    height: 450px;
     overflow: auto;
     border-radius: 5px 5px 0px 0px;
     box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.2);
     transition: ease-in all 0.258s;
 }
-.cards:hover{
-    transform: scale(1.05,1.05);
-}
-.cards img {
-    width: 100%;
-    border-radius: 5px 5px 0px 0px;
-    height: 200px;
+
+.card:hover {
+    transform: scale(1.05, 1.05);
 }
 
-.cards h1 {
+.card img { width: auto; border-radius: 5px 5px 0px 0px; height: 214px; }
+
+.card h1 {
     color: #0f0f0f;
     font-size: 22px;
     margin: 7px;
     text-align: center;
 }
 
-.cards p {
+.card p {
     color: #505050;
     font-size: 16px;
     padding: 20px;

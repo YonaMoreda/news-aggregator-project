@@ -1,42 +1,60 @@
 import React, { useState, useEffect } from "react";
 import "../Stylesheets/home.css";
-const url2 =
-  " https://send-rss-get-json.herokuapp.com/convert/?u=https://rss.dw.com/xml/rss-amh-news";
-const url =
-  "https://send-rss-get-json.herokuapp.com/convert/?u=https://amharic.voanews.com/api/epiqq";
+//****************url xml parser ***********
+// let Parser = require("rss-parser");
+// let parser = new Parser();
+// const u = "https://rss.dw.com/xml/rss-amh-news";
 
-const img =
-  "https://media.istockphoto.com/photos/breaking-news-world-news-with-map-backgorund-picture-id1182477852?k=6&m=1182477852&s=612x612&w=0&h=X-UipiiX5xcMw9dBhzKZWG7UcWjEOARl2s_oTVV8rtE=";
+// (async () => {
+//   let feed = await parser.parseURL(u);
+//   console.log(feed);
+
+//   feed.items.forEach((item) => {
+//     console.log(item);
+//   });
+// })();
+//-*********end of the parser**************
+//*************multiple fetching***************
+// const urls = [
+//   "https://send-rss-get-json.herokuapp.com/convert/?u=https://amharic.voanews.com/api/epiqq",
+//   " https://send-rss-get-json.herokuapp.com/convert/?u=https://rss.dw.com/xml/rss-amh-news",
+// ];
+// const img =
+//   "https://media.istockphoto.com/photos/breaking-news-world-news-with-map-backgorund-picture-id1182477852?k=6&m=1182477852&s=612x612&w=0&h=X-UipiiX5xcMw9dBhzKZWG7UcWjEOARl2s_oTVV8rtE=";
 function Home() {
-  const [news, setNews] = useState([]);
-  const getNews = async () => {
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      setNews(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    getNews();
-  }, []);
-  const da = news.items;
-  console.log(da);
+  // const [news, setNews] = useState([]);
+  // const getNews = async () => {
+  //   try {
+
+  //     const response = await Promise.all(
+  //       urls.map((url) => fetch(url).then((url) => url.json()))
+  //     );
+  //     setNews([...response]);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   getNews();
+  // }, []);
+  // const s = news.map((x) => {
+  //   return x.items;
+  // });
+
+  // console.log(s);
   return (
     <>
-      <nav className="nav">
+      {/* <nav className="nav">
         <h2>logo</h2>
         <h2>explore</h2>
         <h2>Must read</h2>
         <h2>Topics</h2>
       </nav>
       <section>
-        {da &&
-          da.map((item) => {
+        {s &&
+          s.forEach((item) => {
             const { title, description, link, enclosures } = item;
             if (description) {
-              console.log(enclosures[0].url);
               return (
                 <>
                   <a href={link} target="_blank" rel="noopener noreferrer">
@@ -53,7 +71,7 @@ function Home() {
               );
             }
           })}
-      </section>
+      </section> */}
     </>
   );
 }

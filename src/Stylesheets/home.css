@@ -35,7 +35,7 @@ header {
     text-shadow: 3px 3px darkgrey;
 }
 
-footer{
+footer {
     padding: 1% 1% 1%;
     background-color: #ffffff;
     text-align: center;
@@ -53,6 +53,15 @@ section {
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.CardHeader {
+    padding-left: 8%;
+    background-color: #f2f2f2;
+    text-align: left;
+    font-size: 40px;
+    text-shadow: 2px 2px darkgrey;
+    font-weight: lighter;
 }
 
 a {
@@ -82,7 +91,11 @@ a {
     height: 200px;
 }
 
-.card img { width: auto; border-radius: 5px 5px 0px 0px; height: 214px; }
+.card img {
+    width: auto;
+    border-radius: 5px 5px 0px 0px;
+    height: 214px;
+}
 
 .card h1 {
     color: #0f0f0f;

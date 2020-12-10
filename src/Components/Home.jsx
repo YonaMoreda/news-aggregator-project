@@ -17,11 +17,11 @@ function Home() {
                 <h2>ርዕሶች</h2>
             </nav>
             <header>አሁን በመታየት ላይ</header>
-            {/*<h1>የአሜሪካ ድምፅ</h1>*/}
+            <h2 className="CardHeader">የአሜሪካ ድምፅ (ቪኦኤ)</h2>
             <section>
                 <Cards url={url1}/>
             </section>
-            {/*<h1>dw ሬዲዮ</h1>*/}
+            <h2 className="CardHeader">DW ሬዲዮ</h2>
             <section>
                 <Cards url={url2}/>
             </section>

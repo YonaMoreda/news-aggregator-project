@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 
 const img =
     "https://www.dw.com/cssi/dwlogo-print.gif";
@@ -9,19 +9,15 @@ function Cards(props) {
     const getNews = async () => {
         try {
             const response = await fetch(props.url);
-            const data = await response.json();
-            setNews(data);
+            return await response.json();
         } catch (error) {
             console.log(error);
         }
     };
     useEffect(() => {
-        getNews().then(r => console.log(r));
-    }, [getNews]);
-
-
+        getNews().then(r => setNews(r));
+    }, []);
     let news_items = news.items;
-    console.log("XX" + news_items);
     return (
         <>
             {news_items &&

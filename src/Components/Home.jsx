@@ -26,7 +26,6 @@ function Home() {
                 <Cards url={url2}/>
             </section>
             <footer>የተወሰነ ቦታ ያዥ - ፪፼፲፫</footer>
-
         </>
     );
 }

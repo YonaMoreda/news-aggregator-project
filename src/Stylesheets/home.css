@@ -76,6 +76,12 @@ a {
     transform: scale(1.05, 1.05);
 }
 
+.card img {
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+    height: 200px;
+}
+
 .card img { width: auto; border-radius: 5px 5px 0px 0px; height: 214px; }
 
 .card h1 {

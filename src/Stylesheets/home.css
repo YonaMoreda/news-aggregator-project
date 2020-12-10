@@ -59,37 +59,39 @@ a {
     text-decoration: none;
 }
 
-.cards {
+.card {
     margin: 10% 1% 0 1%;
     width: 380px;
     max-width: 700px;
     min-width: 300px;
     background-color: #fff;
-    height: 500px;
+    height: 450px;
     overflow: auto;
     border-radius: 5px 5px 0px 0px;
     box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.2);
     transition: ease-in all 0.258s;
 }
 
-.cards:hover {
+.card:hover {
     transform: scale(1.05, 1.05);
 }
 
-.cards img {
+.card img {
     width: 100%;
     border-radius: 5px 5px 0px 0px;
     height: 200px;
 }
 
-.cards h1 {
+.card img { width: auto; border-radius: 5px 5px 0px 0px; height: 214px; }
+
+.card h1 {
     color: #0f0f0f;
     font-size: 22px;
     margin: 7px;
     text-align: center;
 }
 
-.cards p {
+.card p {
     color: #505050;
     font-size: 16px;
     padding: 20px;

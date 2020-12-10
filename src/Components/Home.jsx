@@ -1,97 +1,33 @@
 import React from "react";
 import "../Stylesheets/home.css";
-import Loader from "./loader";
-class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoaded: false,
-      error: null,
-      titles: [],
-      descriptions: [],
-      links: [],
-    };
-  }
+import Cards from "./Cards";
 
-  componentDidMount() {
-    let rss_links = [
-      "https://rss.dw.com/xml/rss-amh-news" /*, "https://amharic.voanews.com/api/epiqq",
-            /*"https://www.addisadmassnews.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=1&Itemid=180&format=feed",
-            "http://feeds.bbci.co.uk/news/world/africa/rss.xml"*/,
-    ];
-    rss_links.forEach((rss_link) => {
-      fetch(rss_link)
-        .then((response) => response.text())
-        .then(
-          (str) => new window.DOMParser().parseFromString(str, "text/xml"),
-          (error) => {
-            this.setState({
-              isLoaded: true,
-              error: error,
-            });
-          }
-        )
-        .then((data) => {
-          console.log("DATA:" + data);
-          ["title", "description", "link"].forEach((attrib) => {
-            let items = data.getElementsByTagName(attrib);
-            let item_values = [];
-            for (let i = 0; i < items.length; i++) {
-              item_values.push(items[i].childNodes[0].nodeValue);
-            }
-            this.setState({
-              [attrib + "s"]: item_values,
-              isLoaded: true,
-            });
-          });
-        });
-    });
-  }
+const url2 =
+    " https://send-rss-get-json.herokuapp.com/convert/?u=https://rss.dw.com/xml/rss-amh-news";
+const url1 =
+    "https://send-rss-get-json.herokuapp.com/convert/?u=https://amharic.voanews.com/api/epiqq";
 
-  render() {
-    const { error, isLoaded, titles, descriptions, links } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <Loader />;
-    } else {
-      return (
+function Home() {
+    return (
         <>
-          <nav className="nav">
-            <h2>የዜና አርማ</h2>
-            <h2>ያስሱ</h2>
-            <h2>ዋና ዜና</h2>
-            <h2>ርዕሶች</h2>
-          </nav>
-
-          <header>አሁን በመታየት ላይ</header>
-          <section>
-            {titles.map((title, i, image) => {
-              if (i >= 2) {
-                return (
-                  <>
-                    <a href={links[i]} target="_blank" rel="noreferrer">
-                      <div className="cards">
-                        <img
-                          src="https://us.123rf.com/450wm/alhovik/alhovik1709/alhovik170900031/86481591-stock-vector-breaking-news-background-world-global-tv-news-banner-design.jpg?ver=6"
-                          alt=""
-                        />
-                        <h1>{title}</h1>
-                        <p>{descriptions[i]}</p>
-                      </div>
-                    </a>
-                  </>
-                );
-              } else {
-                return null;
-              }
-            })}
-          </section>
-          <footer>የተወሰነ ቦታ ያዥ - ፪፼፲፫ </footer>
+            <nav className="nav">
+                <h2>የዜና አርማ</h2>
+                <h2>ያስሱ</h2>
+                <h2>ዋና ዜና</h2>
+                <h2>ርዕሶች</h2>
+            </nav>
+            <header>አሁን በመታየት ላይ</header>
+            {/*<h1>የአሜሪካ ድምፅ</h1>*/}
+            <section>
+                <Cards url={url1}/>
+            </section>
+            {/*<h1>dw ሬዲዮ</h1>*/}
+            <section>
+                <Cards url={url2}/>
+            </section>
+            <footer>የተወሰነ ቦታ ያዥ - ፪፼፲፫</footer>
         </>
-      );
-    }
-  }
+    );
 }
 
 export default Home;
